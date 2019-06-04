@@ -1,17 +1,25 @@
 package vp.spring.rcs.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(catalog = "dbrecordstore")
 public class Kategorija {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	Long id;
 
+	@OneToMany(mappedBy="kategorija")
+	private Set<Projekat> projekti= new HashSet<>();
 	private String naziv;
 
 	public Kategorija(Long id, String naziv) {
@@ -38,6 +46,14 @@ public class Kategorija {
 
 	public void setNaziv(String naziv) {
 		this.naziv = naziv;
+	}
+
+	public Set<Projekat> getProjekti() {
+		return projekti;
+	}
+
+	public void setProjekti(Set<Projekat> projekti) {
+		this.projekti = projekti;
 	}
 	
 	

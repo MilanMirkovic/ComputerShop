@@ -1,9 +1,14 @@
 package vp.spring.rcs.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(catalog="dbrecordstore")
@@ -15,18 +20,24 @@ public class Projekat {
 	
 	private String naziv;
 	private String opis;
+	
+	@ManyToOne
 	private Kategorija kategorija;
-	private Faq faq;
-	private Vest vest;
+	
+	@OneToMany(mappedBy="projekat")
+	private Set<Faq> faq=new HashSet<>();
+
+	@OneToMany(mappedBy="projekat")
+	private Set<Vest> vesti=new HashSet<>();
+	@ManyToOne
 	private Korisnik korisnik;
-	public Projekat(Long id, String naziv, String opis, Kategorija kategorija, Faq faq, Vest vest, Korisnik korisnik) {
+	public Projekat(Long id, String naziv, String opis, Kategorija kategorija,  Korisnik korisnik) {
 		super();
 		this.id = id;
 		this.naziv = naziv;
 		this.opis = opis;
 		this.kategorija = kategorija;
-		this.faq = faq;
-		this.vest = vest;
+	
 		this.korisnik = korisnik;
 	}
 	public Projekat() {
@@ -56,17 +67,19 @@ public class Projekat {
 	public void setKategorija(Kategorija kategorija) {
 		this.kategorija = kategorija;
 	}
-	public Faq getFaq() {
+
+	
+	public Set<Faq> getFaq() {
 		return faq;
 	}
-	public void setFaq(Faq faq) {
+	public void setFaq(Set<Faq> faq) {
 		this.faq = faq;
 	}
-	public Vest getVest() {
-		return vest;
+	public Set<Vest> getVesti() {
+		return vesti;
 	}
-	public void setVest(Vest vest) {
-		this.vest = vest;
+	public void setVesti(Set<Vest> vesti) {
+		this.vesti = vesti;
 	}
 	public Korisnik getKorisnik() {
 		return korisnik;

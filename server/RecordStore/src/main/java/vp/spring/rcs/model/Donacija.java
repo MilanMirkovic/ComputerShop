@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(catalog = "RecordStore", name = "Donacija")
+@Table(catalog = "dbrecordstore")
 
 public class Donacija {
 	
