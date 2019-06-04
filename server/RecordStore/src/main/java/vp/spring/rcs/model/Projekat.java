@@ -15,11 +15,11 @@ public class Projekat {
 	
 	private String naziv;
 	private String opis;
-	private Katergorija kategorija;
+	private Kategorija kategorija;
 	private Faq faq;
 	private Vest vest;
 	private Korisnik korisnik;
-	public Projekat(Long id, String naziv, String opis, Katergorija kategorija, Faq faq, Vest vest, Korisnik korisnik) {
+	public Projekat(Long id, String naziv, String opis, Kategorija kategorija, Faq faq, Vest vest, Korisnik korisnik) {
 		super();
 		this.id = id;
 		this.naziv = naziv;
