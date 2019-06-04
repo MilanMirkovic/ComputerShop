@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import vp.spring.rcs.model.Komentar;
 
-public interface KomentarInterface extends JpaRepository <Komentar, Long> {
+public interface KomentarRepository extends JpaRepository <Komentar, Long> {
 
 }
