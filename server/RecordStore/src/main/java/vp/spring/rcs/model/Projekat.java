@@ -50,10 +50,10 @@ public class Projekat {
 	public void setOpis(String opis) {
 		this.opis = opis;
 	}
-	public Katergorija getKategorija() {
+	public Kategorija getKategorija() {
 		return kategorija;
 	}
-	public void setKategorija(Katergorija kategorija) {
+	public void setKategorija(Kategorija kategorija) {
 		this.kategorija = kategorija;
 	}
 	public Faq getFaq() {
