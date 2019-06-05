@@ -23,7 +23,7 @@ public class Donacija {
 	
 	
 	private double iznos;
-	private double suma;
+	
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Projekat projekat;
@@ -35,7 +35,7 @@ public class Donacija {
 		super();
 		this.id = id;
 		this.iznos = iznos;
-		this.suma = suma;
+		
 		this.projekat = projekat;
 		this.korisnik = korisnik;
 	}
@@ -60,14 +60,7 @@ public class Donacija {
 		this.iznos = iznos;
 	}
 
-	public double getSuma() {
-		return suma;
-	}
-
-	public void setSuma(double suma) {
-		this.suma = suma;
-	}
-
+	
 	public Projekat getProjekat() {
 		return projekat;
 	}

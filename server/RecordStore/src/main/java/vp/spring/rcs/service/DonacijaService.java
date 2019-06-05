@@ -14,12 +14,26 @@ public class DonacijaService {
 	@Autowired
 	DonacijaRepository donacijaRepository;
 	
-	private List<Donacija> getAll() {
+	public List<Donacija> getAll() {
 		return donacijaRepository.findAll();
 	}
 
-////	private Double getSuma() {
-////		double Suma; //
+	public Double getDonacije() {
+		List<Donacija> donacije = donacijaRepository.findAll();
+		double suma = donacije
+		.stream()
+		.mapToDouble(d -> d.getIznos())
+		.sum();
+		return suma;
+		
+	}
+	
+	public Donacija save(Donacija donacija){
+		return donacijaRepository.save(donacija);
+	}
+	
+//	public Double getDonacijeFromUser() {
+//		
 //	}
 
 }

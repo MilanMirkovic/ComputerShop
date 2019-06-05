@@ -6,4 +6,7 @@ import vp.spring.rcs.model.Donacija;
 
 public interface DonacijaRepository extends JpaRepository <Donacija, Long> {
 
+	
+	
+	
 }
