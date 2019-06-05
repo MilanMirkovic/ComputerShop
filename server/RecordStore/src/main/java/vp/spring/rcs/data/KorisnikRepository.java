@@ -2,9 +2,9 @@ package vp.spring.rcs.data;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import vp.spring.rcs.model.Korisnik;
+import vp.spring.rcs.model.user.SecurityUser;
 
-public interface KorisnikRepository extends JpaRepository<Korisnik, Long>{
+public interface KorisnikRepository extends JpaRepository<SecurityUser, Long>{
 
 	
 }

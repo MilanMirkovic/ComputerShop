@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import vp.spring.rcs.data.KorisnikRepository;
-import vp.spring.rcs.model.Korisnik;
+import vp.spring.rcs.model.user.SecurityUser;
 
 @Component
 public class KorisnikService {
@@ -14,11 +14,11 @@ public class KorisnikService {
 	@Autowired
 	KorisnikRepository korisnikRepo;
 
-	public List<Korisnik> getAll() {
+	public List<SecurityUser> getAll() {
 		return korisnikRepo.findAll();
 	}
 
-	public Korisnik getOne(Long id) {
+	public SecurityUser getOne(Long id) {
 		return korisnikRepo.findOne(id);
 	}
 }

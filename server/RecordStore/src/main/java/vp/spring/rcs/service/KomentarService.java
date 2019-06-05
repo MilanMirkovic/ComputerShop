@@ -18,8 +18,8 @@ public class KomentarService {
 		return komentarRepository.findAll();
 	}
 	
-	private Komentar getOne(String username) {
-		return komentarRepository.findByUsername(username);
-	}
+//	private Komentar getOne(String username) {
+//		return komentarRepository.findByUsername(username);
+//	}
 
 }

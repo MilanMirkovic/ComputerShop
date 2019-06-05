@@ -6,6 +6,6 @@ import vp.spring.rcs.model.Komentar;
 
 public interface KomentarRepository extends JpaRepository <Komentar, Long> {
 	
-	Komentar findByUsername(String username);
+//	Komentar findByUsername(String username);
 
 }

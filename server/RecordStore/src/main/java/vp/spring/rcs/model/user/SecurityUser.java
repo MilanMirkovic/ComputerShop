@@ -10,6 +10,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import vp.spring.rcs.model.Donacija;
+import vp.spring.rcs.model.Projekat;
+
 @Entity
 public class SecurityUser {
 	@Id
@@ -26,6 +29,28 @@ public class SecurityUser {
 	
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
 	private Set<SecurityUserAuthority> userAuthorities = new HashSet<SecurityUserAuthority>();
+	
+	@OneToMany(mappedBy = "korisnik")
+	private Set<Donacija> donacije = new HashSet<>();
+
+	@OneToMany(mappedBy="korisnik")
+	private Set<Projekat> projekti=new HashSet<>();
+
+	public Set<Donacija> getDonacije() {
+		return donacije;
+	}
+
+	public void setDonacije(Set<Donacija> donacije) {
+		this.donacije = donacije;
+	}
+
+	public Set<Projekat> getProjekti() {
+		return projekti;
+	}
+
+	public void setProjekti(Set<Projekat> projekti) {
+		this.projekti = projekti;
+	}
 
 	public Long getId() {
 		return id;

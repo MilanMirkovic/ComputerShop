@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import vp.spring.rcs.model.user.SecurityUser;
 @Entity
 @Table(catalog="dbrecordstore")
 public class Projekat {
@@ -30,8 +32,8 @@ public class Projekat {
 	@OneToMany(mappedBy="projekat")
 	private Set<Vest> vesti=new HashSet<>();
 	@ManyToOne
-	private Korisnik korisnik;
-	public Projekat(Long id, String naziv, String opis, Kategorija kategorija,  Korisnik korisnik) {
+	private SecurityUser korisnik;
+	public Projekat(Long id, String naziv, String opis, Kategorija kategorija,  SecurityUser korisnik) {
 		super();
 		this.id = id;
 		this.naziv = naziv;
@@ -81,10 +83,10 @@ public class Projekat {
 	public void setVesti(Set<Vest> vesti) {
 		this.vesti = vesti;
 	}
-	public Korisnik getKorisnik() {
+	public SecurityUser getKorisnik() {
 		return korisnik;
 	}
-	public void setKorisnik(Korisnik korisnik) {
+	public void setKorisnik(SecurityUser korisnik) {
 		this.korisnik = korisnik;
 	}
 	
