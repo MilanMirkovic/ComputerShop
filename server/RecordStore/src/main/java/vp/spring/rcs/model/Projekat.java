@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import vp.spring.rcs.model.user.SecurityUser;
 @Entity
 @Table(catalog="dbrecordstore")
@@ -25,10 +27,11 @@ public class Projekat {
 	
 	@ManyToOne
 	private Kategorija kategorija;
-	
+	@JsonIgnore
 	@OneToMany(mappedBy="projekat")
 	private Set<Faq> faq=new HashSet<>();
 
+	@JsonIgnore
 	@OneToMany(mappedBy="projekat")
 	private Set<Vest> vesti=new HashSet<>();
 	@ManyToOne

@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(catalog = "dbrecordstore")
 public class Kategorija {
@@ -18,6 +20,7 @@ public class Kategorija {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	Long id;
 
+	@JsonIgnore
 	@OneToMany(mappedBy="kategorija")
 	private Set<Projekat> projekti= new HashSet<>();
 	private String naziv;

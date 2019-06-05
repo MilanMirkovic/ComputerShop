@@ -16,7 +16,7 @@ import vp.spring.rcs.model.Kategorija;
 import vp.spring.rcs.service.KategorijaService;
 
 @RestController
-@RequestMapping(value = "/api/records")
+@RequestMapping(value = "/api/kategorija")
 
 public class KategorijaController {
 	
