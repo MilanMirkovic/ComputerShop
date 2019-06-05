@@ -7,5 +7,7 @@ import vp.spring.rcs.model.Kategorija;
 
 @Component
 public interface KategorijaRepository extends JpaRepository<Kategorija, Long> {
+	
+	Kategorija findByNaziv(String naziv);
 
 }

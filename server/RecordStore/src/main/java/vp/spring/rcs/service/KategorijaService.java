@@ -19,8 +19,17 @@ public class KategorijaService {
 
 	}
 	
-	public Kategorija findOne(Long id) {
-		return kategorijaRepo.findOne(id);
+	public Kategorija findOne(String naziv) {
+		return kategorijaRepo.findByNaziv(naziv);
+	}
+	
+	public Kategorija save(Kategorija kategorija) {
+		return kategorijaRepo.save(kategorija);
+	}
+	
+	public void remove (String naziv) {
+		Kategorija kategorija = findOne(naziv);
+		kategorijaRepo.delete(kategorija.getId());
 	}
 	
 }
