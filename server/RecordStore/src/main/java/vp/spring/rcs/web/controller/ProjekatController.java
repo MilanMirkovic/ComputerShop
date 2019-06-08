@@ -52,7 +52,7 @@ public class ProjekatController {
 	@PostMapping(value="/api/projekti")
 	public ResponseEntity<ProjekatDTO> createProject(@RequestBody ProjekatDTO projekat){
 		
-		Kategorija novaKategorija=kategorijaService.findById(projekat.getKategorija().getId());
+		Kategorija novaKategorija=kategorijaService.find(projekat.getKategorija().getId());
 		
 		SecurityUser user= korisnikService.getOne(projekat.getKorisnik().getId());
 		Projekat novi=new Projekat();

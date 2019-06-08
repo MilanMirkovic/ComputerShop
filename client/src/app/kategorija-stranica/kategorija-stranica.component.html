@@ -1,0 +1,16 @@
+<div >
+  <div class="row">
+    <ul id="lista" >
+      <div>
+      <li *ngFor="let p of projekti" >
+      
+        <div class="col-md-6">
+          <span><h3>{{p.naziv}}</h3></span>
+        <span> <p>{{p.opis}}</p></span>
+        <div><img class="img-rounded" width="80%" height="250" src="{{p.imageUrl}}"></div>
+      </div>
+      </li>
+    </div>
+    </ul>
+  </div>
+</div>

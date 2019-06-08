@@ -1,0 +1,25 @@
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+  }
+  
+  .navbar .navbar-collapse {
+    text-align: center;
+  }
+
+  img{
+      size: 100%;
+      align-content: center;
+  }
+  form{
+      float:rigth;
+  }
+
+  .search-container {
+   
+    float: right;
+    padding: 6px 10px;
+    font-size: 17px;
+    cursor: pointer;
+  }

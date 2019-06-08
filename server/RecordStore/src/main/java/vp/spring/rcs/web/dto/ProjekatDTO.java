@@ -12,8 +12,9 @@ public class ProjekatDTO {
 	private String opis;
 	private KategorijaDTO kategorija;
 	private KorisnikDTO korisnik;
-	
+	private String imageUrl;
 	public ProjekatDTO(Projekat projekat) {
+		this.imageUrl=projekat.getImageUlr();
 		this.id=projekat.getId();
 		this.naziv=projekat.getNaziv();
 		this.opis=projekat.getOpis();
@@ -25,6 +26,16 @@ public class ProjekatDTO {
 
 	public ProjekatDTO() {
 	
+	}
+
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 
 

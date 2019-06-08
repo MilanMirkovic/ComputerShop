@@ -23,7 +23,7 @@ public class KategorijaService {
 		return kategorijaRepo.findByNaziv(naziv);
 	}
 	
-	public Kategorija findById(Long id) {
+	public Kategorija find(Long id) {
 		return kategorijaRepo.findOne(id);
 	}
 	

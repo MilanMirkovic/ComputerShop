@@ -31,13 +31,15 @@ public class Projekat {
 	@OneToMany(mappedBy="projekat")
 	private Set<Faq> faq=new HashSet<>();
 
+	private String imageUlr;
 	@JsonIgnore
 	@OneToMany(mappedBy="projekat")
 	private Set<Vest> vesti=new HashSet<>();
 	@ManyToOne
 	private SecurityUser korisnik;
-	public Projekat(Long id, String naziv, String opis, Kategorija kategorija,  SecurityUser korisnik) {
+	public Projekat(String imageUrl, Long id, String naziv, String opis, Kategorija kategorija,  SecurityUser korisnik) {
 		super();
+		this.imageUlr=imageUrl;
 		this.id = id;
 		this.naziv = naziv;
 		this.opis = opis;
@@ -45,6 +47,15 @@ public class Projekat {
 	
 		this.korisnik = korisnik;
 	}
+	
+	public String getImageUlr() {
+		return imageUlr;
+	}
+
+	public void setImageUlr(String imageUlr) {
+		this.imageUlr = imageUlr;
+	}
+
 	public Projekat() {
 		super();
 	}

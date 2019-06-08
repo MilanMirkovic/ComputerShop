@@ -13,12 +13,18 @@ import { CanActivateAuthGuard } from './security/can-activate-auth.guard';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './security/token-interceptor.service';
 import { JwtUtilsService } from './security/jwt-utils.service';
+import { KategorijeNaviagationBarComponent } from './kategorije-naviagation-bar/kategorije-naviagation-bar.component';
+import { KategorijaStranicaComponent } from './kategorija-stranica/kategorija-stranica.component';
+import { ProjekatDetailsComponent } from './projekat-details/projekat-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    KategorijeNaviagationBarComponent,
+    KategorijaStranicaComponent,
+    ProjekatDetailsComponent
   ],
   imports: [
     BrowserModule,
