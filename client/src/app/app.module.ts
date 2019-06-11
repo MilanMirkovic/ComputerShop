@@ -16,6 +16,9 @@ import { JwtUtilsService } from './security/jwt-utils.service';
 import { KategorijeNaviagationBarComponent } from './kategorije-naviagation-bar/kategorije-naviagation-bar.component';
 import { KategorijaStranicaComponent } from './kategorija-stranica/kategorija-stranica.component';
 import { ProjekatDetailsComponent } from './projekat-details/projekat-details.component';
+import { MainComponent } from './main/main.component';
+import { FilterProjekatComponent } from './filter-projekat/filter-projekat.component';
+import { AddProjectComponent } from './add-project/add-project.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { ProjekatDetailsComponent } from './projekat-details/projekat-details.co
     LoginComponent,
     KategorijeNaviagationBarComponent,
     KategorijaStranicaComponent,
-    ProjekatDetailsComponent
+    ProjekatDetailsComponent,
+    MainComponent,
+    FilterProjekatComponent,
+    AddProjectComponent
   ],
   imports: [
     BrowserModule,

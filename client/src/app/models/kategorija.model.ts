@@ -2,8 +2,8 @@ import { Projekat } from './projekat.model';
 
 export interface KategorijaInterface{
     id?:number;
-    naziv:string;
-    projekti:Projekat[];
+    naziv?:string;
+    projekti?:Projekat[];
 }
 
 

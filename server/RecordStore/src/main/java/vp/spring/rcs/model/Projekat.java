@@ -32,11 +32,16 @@ public class Projekat {
 	private Set<Faq> faq=new HashSet<>();
 
 	private String imageUlr;
-	@JsonIgnore
+	
 	@OneToMany(mappedBy="projekat")
+	
 	private Set<Vest> vesti=new HashSet<>();
+	
 	@ManyToOne
 	private SecurityUser korisnik;
+	
+	
+	
 	public Projekat(String imageUrl, Long id, String naziv, String opis, Kategorija kategorija,  SecurityUser korisnik) {
 		super();
 		this.imageUlr=imageUrl;

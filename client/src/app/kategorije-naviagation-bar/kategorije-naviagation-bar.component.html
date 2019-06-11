@@ -11,18 +11,25 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Home</a>
+            <a class="navbar-brand" [routerLink]="['main']" href="#">Home</a>
+            <a class="navbar-brand success"[routerLink]="['addproject']" *ngIf="isLoggedIn()"><span class="glyphicon glyphicon-plus-sign"></span>Create New Project</a>
           </div>
         
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav" *ngFor="let c of kategorije">
               <li class="pull-left"><a [routerLink]="['kategorija/', c.id]">{{c.naziv}}</a></li>
+              
+
+                
             </ul>
+            <span class="navbar-brand" id="logOut" *ngIf="isLoggedIn()"><a (click)="logout()">LogOut</a></span>
+            <span class="navbar-brand" id="logOut" *ngIf="!isLoggedIn()"><a [routerLink]="['login']">LogIn</a></span>
+              
             <div class="search-container">
-                    <form action="/action_page.php">
-                      <input type="text" placeholder="Search for Projects.." name="search">
-                      <button type="submit"><i class="fa fa-search">submit</i></button>
+                    <form >
+                      <input type="text" placeholder="Search for Projects.." name="naziv" [(ngModel)]="naziv">
+                     <a [routerLink]="['projekti/', naziv]"> <button type="submit"><i class="fa fa-search" >submit</i></button></a>
                     </form>
                   </div>
           </div><!-- /.navbar-collapse -->

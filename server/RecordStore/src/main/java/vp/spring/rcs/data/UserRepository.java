@@ -8,5 +8,6 @@ import vp.spring.rcs.model.user.SecurityUser;
 
 @Repository
 public interface UserRepository extends JpaRepository<SecurityUser, Long> {
-	  public SecurityUser findByUsername(String username);
+	  
+	public SecurityUser findByUsername(String username);
 }

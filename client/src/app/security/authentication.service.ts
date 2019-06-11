@@ -59,4 +59,18 @@ export class AuthenticationService {
       return undefined;
     }
   }
+
+
+  getUser(){
+    
+    if(localStorage.currentUser){
+      let user = JSON.parse(localStorage.getItem('currentUser'))
+     return user.username;
+     
+    }
+    else{
+      return undefined;
+    }
+
+  }
 }

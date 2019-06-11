@@ -9,12 +9,17 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import vp.spring.rcs.model.user.SecurityUser;
 import vp.spring.rcs.security.TokenUtils;
+import vp.spring.rcs.service.KorisnikService;
+import vp.spring.rcs.web.dto.KorisnikDTO;
 import vp.spring.rcs.web.dto.LoginDTO;
 import vp.spring.rcs.web.dto.TokenDTO;
 
@@ -26,6 +31,9 @@ public class UserController {
 	
 	@Autowired
 	private UserDetailsService userDetailsService;
+	
+	@Autowired
+	KorisnikService korisnikService;
 	
 	@Autowired
 	TokenUtils tokenUtils;
@@ -44,5 +52,16 @@ public class UserController {
         } catch (Exception ex) {
             return new ResponseEntity<TokenDTO>(new TokenDTO(""), HttpStatus.BAD_REQUEST);
         }
+	}
+	
+	
+	
+	@GetMapping(value="/api/user/{username}")
+	public ResponseEntity<KorisnikDTO> findByUserName(@PathVariable String username){
+		SecurityUser korisnik=korisnikService.findByUserName(username);
+		
+		KorisnikDTO dto=new KorisnikDTO(korisnik);
+		
+		return new ResponseEntity<>(dto, HttpStatus.OK);
 	}
 }

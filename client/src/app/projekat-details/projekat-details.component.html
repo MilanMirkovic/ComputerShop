@@ -1,3 +1,33 @@
-<p>
-  projekat-details works!
-</p>
+<div class="container" *ngIf="projekat">
+  <div class="row">
+    <div class="projekat col-sm-10">
+      <h1>{{projekat.naziv}} </h1>
+      <div>
+        <img src="{{projekat.imageUrl}}" width="70%" height="70%">
+      </div>
+      <div class="faq">
+        <ul *ngFor="let f of faqs">
+          <li>
+            <h5 id="pitanje">{{f.odgovor}}</h5>  <!-- slucjano sam u bazi obrnuo unos, pa je zato ovako :D-->
+            <p id="odgovor"> {{f.pitanje}}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div  class="donacija col-sm-2">
+      <h3>Donacije</h3>
+      <p>Cilj {{zeljenaSuma}}</p>
+      <p>Ukupno Donirano {{suma}}</p>
+      <br>
+      <p>Broj donatora {{brojDonacija}}</p>
+
+      <div *ngIf="isLoggedIn()">
+        <input type="number" name="novaDonacija" [(ngModel)]="newDonacija.iznos">
+        <button (click)="doniraj()">Doniraj</button>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>

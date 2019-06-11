@@ -9,6 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import vp.spring.rcs.model.user.SecurityUser;
+import vp.spring.rcs.web.dto.ProjekatDTO;
 
 
 @Entity
@@ -23,7 +24,7 @@ public class Donacija {
 	
 	
 	private double iznos;
-	
+	private double zeljeniIznos;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Projekat projekat;
@@ -31,14 +32,25 @@ public class Donacija {
 	@ManyToOne(fetch = FetchType.EAGER)
 	private SecurityUser korisnik;
 
-	public Donacija(Long id, double iznos, double suma, Projekat projekat, SecurityUser korisnik) {
+	public Donacija(Long id,double zeljeniIznos, double iznos, double suma, Projekat projekat, SecurityUser korisnik) {
 		super();
 		this.id = id;
 		this.iznos = iznos;
-		
+		this.zeljeniIznos=zeljeniIznos;
 		this.projekat = projekat;
 		this.korisnik = korisnik;
 	}
+	
+
+	public double getZeljeniIznos() {
+		return zeljeniIznos;
+	}
+
+
+	public void setZeljeniIznos(double zeljeniIznos) {
+		this.zeljeniIznos = zeljeniIznos;
+	}
+
 
 	public Donacija() {
 		super();
@@ -76,6 +88,8 @@ public class Donacija {
 	public void setKorisnik( SecurityUser korisnik) {
 		this.korisnik = korisnik;
 	}
+
+	
 	
 
 

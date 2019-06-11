@@ -1,11 +1,13 @@
-import { Kategorija } from './kategorija.model';
+import { Kategorija, KategorijaInterface } from './kategorija.model';
+import { KorisnikInterface } from './korisnik.model';
 
-export interface ProjekatInterface {
+ export interface ProjekatInterface {
     id?:number;
-    naziv:string;
-    opis:string;
-    kategorija:Kategorija;
-    imageUlr:string;
+    naziv?:string;
+    opis?:string;
+    kategorija?:KategorijaInterface;
+    imageUlr?:string;
+    korisnik?:KorisnikInterface;
     // faq:Faq[];
     // vesti:Vest[];
 }
@@ -13,10 +15,11 @@ export interface ProjekatInterface {
 
 
 export class Projekat implements ProjekatInterface{
-    id?: number;    naziv: string;
+    id: number;    naziv: string;
     opis: string;
-    kategorija: Kategorija;
+    kategorija: KategorijaInterface;
     imageUlr:string;
+    korisnik:KorisnikInterface;
     // faq: Faq[];
     // vesti: Vest[];
 
@@ -25,6 +28,7 @@ export class Projekat implements ProjekatInterface{
         this.opis=projekat.opis;
         this.kategorija=projekat.kategorija;
         this.imageUlr=projekat.imageUlr;
+        this.korisnik=projekat.korisnik;
         // this.faq=projekat.faq;
         // this.vesti=projekat.vesti;
     }

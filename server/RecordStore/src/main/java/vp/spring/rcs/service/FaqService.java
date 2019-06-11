@@ -14,7 +14,7 @@ public class FaqService {
 	@Autowired
 	FaqRepository faqRepository;
 	
-	private List<Faq> getAll(){
+	public List<Faq> getAll(){
 		return faqRepository.findAll();
 	}
 

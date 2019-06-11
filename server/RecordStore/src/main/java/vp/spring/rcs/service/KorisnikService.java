@@ -21,4 +21,13 @@ public class KorisnikService {
 	public SecurityUser getOne(Long id) {
 		return korisnikRepo.findOne(id);
 	}
+	
+	public SecurityUser save (SecurityUser user) {
+		return korisnikRepo.save(user);
+	}
+
+	 public SecurityUser findByUserName(String username) {
+			return  korisnikRepo.findByUsername(username);
+		  }
+	
 }
