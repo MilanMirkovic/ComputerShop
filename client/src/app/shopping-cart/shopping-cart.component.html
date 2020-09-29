@@ -1,0 +1,72 @@
+
+<div class="container ">
+  <div class="row">
+      <div class="col-12">
+          <div class="table-responsive">
+              <table class="table table-striped">
+                  <thead >
+                      <tr>
+                          <th scope="col"> </th>
+                          <th scope="col">Product</th>
+                          <th scope="col"></th>
+                          <th scope="col">Quantity</th>
+                          <th scope="col"></th>
+                          <th scope="col" class="text-right">Price</th>
+                          <th> </th>
+                      </tr>
+                  </thead>
+                  <tbody  *ngFor="let c of cartItems">
+                      <tr>
+                          <td><img class="img"src="https://dummyimage.com/50x50/55595c/fff" s /> </td>
+                          <td>{{c.component.name}}</td>
+                          <td>
+                    
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-danger btn-number"  data-type="minus"  (click)="updateCart(c.id,'remove',c)" *ngIf="checkQuantity(c.quantity);">
+                                      <span class="glyphicon glyphicon-minus"></span>
+                                    </button>
+                                </span>
+                              
+                        
+                           </td>
+                                <td class="quantity">{{c.quantity}}</td>
+                           <td>    
+                            
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-success btn-number" data-type="plus"  (click)="updateCart(c.id,add,c)">
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                    </button>
+                                </span>
+                       
+                      </td>
+                          
+                          <td class="text-right">{{c.component.price * c.quantity}} $</td>
+                          <td class="text-right"><button class="btn btn-sm btn-danger" (click)="deleteCartItem(c.id)"><i class="glyphicon glyphicon-trash fa fa-trash"></i> </button> </td>
+                      </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>Total Price:  </td>
+                      <td class="text-right">  {{totalPrice}} $</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+    
+      <div class="col mb-2">
+          <div class="row">
+              <div class="col-sm-12  col-md-6">
+                  <button class="btn btn-block btn-light">Continue Shopping</button>
+              </div>
+              <div class="col-sm-12 col-md-6 text-right">
+                  <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+              </div>
+          </div>
+      </div>
+  </div>

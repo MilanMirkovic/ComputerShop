@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row" *ngIf="components">
+    <div  class="col-md-3" *ngFor="let g of components.content">
+      <div>
+        <img src="https://dummyimage.com/150x150/55595c/fff" alt="">
+        <p class="name">{{g.name}}</p> 
+        <p>{{g.price}} $</p>
+        <p><button class="btn btn-warning"(click)="addToCartItem(g.id)">AddToCart</button></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -3,23 +3,25 @@ import { Routes, RouterModule } from '@angular/router';
 import { CanActivateAuthGuard } from './security/can-activate-auth.guard';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { KategorijeNaviagationBarComponent } from './kategorije-naviagation-bar/kategorije-naviagation-bar.component';
-import { KategorijaStranicaComponent } from './kategorija-stranica/kategorija-stranica.component';
-import { ProjekatDetailsComponent } from './projekat-details/projekat-details.component';
+
+import { PcComponentDetailsComponent } from './pc-component-details/pc-component-details.component';
+
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { GraphicCardsComponent } from './graphic-cards/graphic-cards.component';
+import { ProccesorsComponent } from './proccesors/proccesors.component';
 import { AppComponent } from './app.component';
-import { MainComponent } from './main/main.component';
-import { FilterProjekatComponent } from './filter-projekat/filter-projekat.component';
-import { AddProjectComponent } from './add-project/add-project.component';
+import { FilterComponent } from './filter/filter.component';
 
 const routes: Routes = [
-  {path: 'projekti/:naziv', component :FilterProjekatComponent},
-   { path: 'kategorija/:id', component:KategorijaStranicaComponent },
-   {path: 'projekat/:id', component:ProjekatDetailsComponent},
-    { path: 'main', component: MainComponent},  
-    {path: 'addproject' ,component:AddProjectComponent,  canActivate:[CanActivateAuthGuard]},
- 
+{path:'main', component:PcComponentDetailsComponent},
+{path:'shoppingCart', component:ShoppingCartComponent},
+{path:'graphicsCards', component:GraphicCardsComponent},
+{path:'proccesors', component:ProccesorsComponent},
+{path:'filter/:id/:name', component:FilterComponent},
    { path: 'login', component: LoginComponent},
+   {path:'reload', component:AppComponent},
  { path: '', redirectTo: 'main', pathMatch: 'full' },
+ { path: 'login', component: LoginComponent}, 
   // { path: '**', component: PageNotFoundComponent }
 ];
 
